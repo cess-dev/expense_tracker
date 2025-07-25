@@ -9,7 +9,6 @@ def main():
     else:
         print("Please enter a valid input")        
 
-
 #adding function
 def add():
     fieldnames = ["Amount", "Category", "Note", "Date"]
@@ -42,4 +41,5 @@ def view():
 
 
 if __name__ == "__main__":
-    main()    
+    main()
+
