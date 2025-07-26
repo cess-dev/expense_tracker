@@ -1,13 +1,31 @@
 import csv
+
+from dateutil import parser
+
+def parse_month_year(user_input):
+    try:
+        #to ensure that the user inputs the month before the year
+        date = parser.parse(user_input, dayfirst=True)
+        return date.month, date.year
+    except Exception as e:
+        print("Invalid date format. Try again.")
+        return None, None
+
+
 #main function
 def main():
     role = input("What would you like to do: \n 1. Add expense \n 2. View expense\n")
     if role == "1":
         add()
     elif role == "2":
+        user_input = input("Enter month and year (e.g., 'September 2025' or '9/2025'): ")
+        month, year = parse_month_year(user_input)
         view()
     else:
         print("Please enter a valid input")        
+def expenditure_breakdown(n):
+    total = 0
+    
 
 #adding function
 def add():
